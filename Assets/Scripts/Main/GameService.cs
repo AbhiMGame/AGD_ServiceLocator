@@ -41,16 +41,20 @@ namespace ServiceLocator.Main
         private void createServices()
         {
             EventService = new EventService();
-            UIService.SubscribeToEvents();
+           
             MapService = new MapService(mapScriptableObject);
             WaveService = new WaveService(waveScriptableObject);
             SoundService = new SoundService(soundScriptableObject, SFXSource, BGSource);
             PlayerService = new PlayerService(playerScriptableObject);
+            
         }
 
         private void InjectDependencies()
         {
             PlayerService.Init(UIService,MapService,SoundService);
+            WaveService.Init(EventService, UIService, MapService, SoundService);
+            MapService.Init(EventService);
+            UIService.Init(EventService, WaveService);
         }
 
         private void Update()

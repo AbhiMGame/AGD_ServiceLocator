@@ -17,6 +17,8 @@ namespace ServiceLocator.Sound
             PlaybackgroundMusic(SoundType.BackgroundMusic, true);
         }
 
+        
+
         public void PlaySoundEffects(SoundType soundType, bool loopSound = false)
         {
             AudioClip clip = GetSoundClip(soundType);
