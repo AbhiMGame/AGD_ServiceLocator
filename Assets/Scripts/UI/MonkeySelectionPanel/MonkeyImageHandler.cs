@@ -16,6 +16,7 @@ namespace ServiceLocator.UI
         private Vector2 originalAnchoredPosition;
         private Vector3 originalPosition;
 
+       
         public void ConfigureImageHandler(Sprite spriteToSet, MonkeyCellController owner)
         {
             this.spriteToSet = spriteToSet;
